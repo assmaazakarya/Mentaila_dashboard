@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html, body { height: 100%; }
+body { margin: 0;
+  font-family: "Roboto", sans-serif !important;
+}
+.changPrimary{
+  background-color: #735BF3
+}
+a{
+  text-decoration: none !important;
+}
+.bgWhite{
+  color: white;
+}
+
+.alignCenter
+{
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: smaller;
+  align-items:center !important;
+}
+.marginCom
+{
+  margin-top: 13vh !important;
+}
+.redWidth{
+  width: 5vw;
+}
+.widthFull{
+  width: 100% !important;
+}
+.btnPrimary:hover{
+  background-color: #725bf3b3;
+}
+.JustCenter{
+  justify-content: center !important;
+  align-items: center !important;
+}
+.pinkBg{
+  background-color: #fd96e6;
+}
+.pinkText{
+  color: #fd96e6;
+}

@@ -1,0 +1,91 @@
+<aside *ngIf="isLogin" class="changPrimary left-sidebar">
+  <!-- Sidebar scroll-->
+  <div>
+    <div class="brand-logo d-flex align-items-center changPrimary justify-content-between">
+      <a href="./index.html" class="text-nowrap logo-img">
+        <h1 class="logo">MENTALIA</h1>
+      </a>
+      <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+        <i class="ti ti-x fs-8"></i>
+      </div>
+    </div>
+    <!-- Sidebar navigation-->
+    <nav class="sidebar-nav changPrimary scroll-sidebar" data-simplebar="">
+      <ul id="sidebarnav">
+        <li *ngIf="isLogin" class="nav-small-cap">
+          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+          <span class="hide-menu text-white">Home</span>
+        </li>
+        <li *ngIf="isLogin" class="sidebar-item">
+          <a class="sidebar-link" routerLink="/main" routerLinkActive="active" aria-expanded="false">
+            <span>
+              <i class="ti ti-layout-dashboard bgWhite"></i>
+            </span>
+            <span class="hide-menu text-white">Dashboard</span>
+          </a>
+        </li>
+        <li *ngIf="isLogin" class="nav-small-cap">
+          <i class="ti ti-dots nav-small-cap-icon fs-4 bgWhite"></i>
+          <span class="hide-menu text-white">Models</span>
+        </li>
+        <li *ngIf="isLogin" class="sidebar-item">
+          <a class="sidebar-link" routerLink="/users" routerLinkActive="active" aria-expanded="false">
+            <span>
+              <i class="ti ti-user bgWhite"></i>
+            </span>
+            <span class="hide-menu text-white">Users</span>
+          </a>
+        </li>
+        <li *ngIf="isLogin" class="sidebar-item">
+          <a class="sidebar-link" routerLink="/coaches" routerLinkActive="active" aria-expanded="false">
+            <span>
+              <i class="ti ti-users bgWhite"></i>
+            </span>
+            <span class="hide-menu text-white">Coaches</span>
+          </a>
+        </li>
+        <li *ngIf="isLogin" class="sidebar-item">
+          <a class="sidebar-link" routerLink="/meals" routerLinkActive="active" aria-expanded="false">
+            <span>
+              <i class="ti ti-meat bgWhite"></i>
+            </span>
+            <span class="hide-menu text-white">Meals</span>
+          </a>
+        </li>
+        <li *ngIf="isLogin" class="sidebar-item">
+          <a class="sidebar-link" routerLink="/orders" routerLinkActive="active" aria-expanded="false">
+            <span>
+              <i class="ti ti-list bgWhite"></i>
+            </span>
+            <span class="hide-menu text-white">Orders</span>
+          </a>
+        </li>
+
+        <li *ngIf="!isLogin" class="nav-small-cap">
+          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+          <span class="hide-menu text-white">AUTH</span>
+        </li>
+        <li *ngIf="!isLogin" class="sidebar-item">
+          <a class="sidebar-link" routerLink="/login" routerLinkActive="active" aria-expanded="false">
+            <span>
+              <i class="ti ti-login bgWhite"></i>
+            </span>
+            <span class="hide-menu text-white">Login</span>
+          </a>
+        </li>
+        <li *ngIf="!isLogin"  class="sidebar-item">
+          <a class="sidebar-link" routerLink="/register" aria-expanded="false">
+            <span>
+              <i class="ti ti-user-plus bgWhite"></i>
+            </span>
+            <span class="hide-menu text-white">Register</span>
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+    <!-- End Sidebar navigation -->
+  </div>
+  <!-- End Sidebar scroll-->
+</aside>

@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <div class="row d-flex JustCenter">
+    <h2 class="text-center">Orders</h2>
+    <div class="col-lg-10 d-flex align-items-stretch w-100">
+      <div class="card w-100 shadow">
+        <div class="card-body p-4">
+          <h3 class="card-title fw-semibold mb-4 btn btnPrimary text-white changPrimary">Make Order</h3>
+          <div class="table-responsive">
+            <table class="table align-middle mb-0 bg-white">
+              <thead class="bg-light">
+                <tr>
+                  <th>Created Date</th>
+                  <th>Order ID</th>
+                  <th>User ID</th>
+                  <th>Country</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Subtotal</th>
+                  <th>Total</th>
+                  <th>Status</th>
+                  <th>Payment Status</th>
+                  <th>Delete</th>
+                  <th>Edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let order of orders">
+                  <td>
+                    <p class="fw-normal mb-1">{{ order.createdAt | date: 'yyyy-MM-dd' }}</p>
+                  </td>
+                  <td>
+                    <div class="d-flex align-items-center">
+                        <p class="fw-normal mb-1">{{ order._id }}</p>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="fw-normal mb-1">{{ order.userName }}</p>
+                  </td>
+                  <td>
+                    <p class="fw-normal mb-1">{{ order.shipping.address.country }}</p>
+                  </td>
+                  <td>
+                    <p class="fw-normal mb-1">{{ order.shipping.email }}</p>
+                  </td>
+                  <td>
+                    <p class="fw-normal mb-1">{{ order.shipping.phone }}</p>
+                  </td>
+                  <td>
+                    <p class="fw-normal mb-1">{{ order.subtotal }}</p>
+                  </td>
+                  <td>
+                    <p class="fw-normal mb-1">{{ order.total }}</p>
+                  </td>
+                  <td>
+                    <span class="badge rounded-3 fw-semibold"
+                          [ngClass]="getBadgeClass(order.delivery_status)">
+                      {{ order.delivery_status }}
+                    </span>
+                  </td>
+                  <td>
+                    <span class="badge rounded-3 fw-semibold"
+                          [ngClass]="getBadgeClass(order.payment_status)">
+                      {{ order.payment_status }}
+                    </span>
+                  </td>
+                  <td>
+                    <button type="button" (click)="delete(order._id)" class="btn pinkText btn-sm bg-body-secondary btn-light-indigo rounded-bill">Delete</button>
+                  </td>
+                  <td>
+                    <button (click)="loadOrder(order)" type="button" class="btn text-indigo btn-sm bg-body-secondary btn-light-indigo rounded-bill" data-bs-toggle="modal" data-bs-target="#largeModal">Edit</button>                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-orderEdit [data]="order" (orderUpdate)="getAllOrders()"></app-orderEdit>

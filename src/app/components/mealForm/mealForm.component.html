@@ -1,0 +1,129 @@
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-indigo text-opacity-75 ">Add/Edit Meal</h5>
+          <button type="button" class="close btn " data-bs-dismiss="modal" aria-bs-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="" [formGroup]="mealForm" (ngSubmit)="onSubmit()">
+            <div class="container h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-9">
+                  <div class="card" style="border-radius: 15px;">
+                    <div class="card-body">
+
+                      <div class="row align-items-center pt-4 pb-3">
+                        <div class="col-md-3 ps-5">
+
+                          <h6 class="mb-0">title</h6>
+
+                        </div>
+                        <div class="col-md-9 pe-5">
+                          <input type="text" class="form-control form-control-lg" formControlName="title" />
+                          <div *ngIf="mealForm.get('title')?.errors && mealForm.get('title')?.touched"
+                            class="alert alert-danger p-1">
+                            <p *ngIf="mealForm.get('title')?.getError('required')" class="m-0">title require</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr class="mx-n3">
+
+                      <div class="row align-items-center py-3">
+                        <div class="col-md-3 ps-5">
+                          <div class="mb-0">
+                            <h6 class="mb-0">category</h6>
+                          </div>
+
+                        </div>
+                        <select formControlName="category" class="col-md-8 rounded-4 bg-white"
+                          style="border-radius: 15px !important; height:8vh !important; border: 1px solid #ded8df">
+                          <option selected>select category</option>
+                          <option value="non-vegetarian">normal</option>
+                          <option value="vegan">Vegan</option>
+                          <option value="vegetarian">vegetarian</option>
+                        </select>
+                        <div *ngIf="mealForm.get('category')?.errors && mealForm.get('category')?.touched"
+                          class="alert alert-danger p-1">
+                          <p *ngIf="mealForm.get('category')?.getError('required')" class="m-0">category require</p>
+                        </div>
+                      </div>
+
+                      <hr class="mx-n3">
+
+                      <div class="row align-items-center py-3">
+                        <div class="col-md-3 ps-5">
+
+                          <h6 class="mb-0">price</h6>
+
+                        </div>
+                        <div class="col-md-9 pe-5">
+                          <input type="number" formControlName="price" class="form-control form-control-lg" />
+                          <div *ngIf="mealForm.get('price')?.errors && mealForm.get('price')?.touched"
+                            class="alert alert-danger p-1">
+                            <p *ngIf="mealForm.get('price')?.getError('required')" class="m-0">price require</p>
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="mx-n3">
+                      <div class="row align-items-center pt-4 pb-3">
+                        <div class="col-md-3 ps-5">
+
+                          <h6 class="mb-0">description</h6>
+
+                        </div>
+                        <div class="col-md-9 pe-5">
+                          <input type="text" class="form-control form-control-lg" formControlName="description" />
+                          <div *ngIf="mealForm.get('description')?.errors && mealForm.get('description')?.touched"
+                            class="alert alert-danger p-1">
+                            <p *ngIf="mealForm.get('description')?.getError('required')" class="m-0">description require
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr class="mx-n3">
+
+                      <div>
+                        <label for=""> this the old image for this meal if you want to keep it you dont need to upload
+                        </label>
+                        <img [src]="oldImage" alt="" width="100">
+                      </div>
+
+                      <div class="row align-items-center py-3">
+                        <div class="col-md-3 ps-5">
+                          <h6 class="mb-0">Upload meal image</h6>
+                        </div>
+                        <div class="col-md-9 pe-5">
+
+                          <input type="file" (change)="handleFileSelection($event)" />
+                          <div *ngIf="true">
+                            <p class="text-danger">Please select an image file to upload.</p>
+                          </div>
+                          <div class="small text-muted mt-2">max size 50mps</div>
+
+                        </div>
+                      </div>
+
+                      <hr class="mx-n3">
+
+                      <div class="modal-footer">
+                        <button type="submit" class="btn changPrimary btnPrimary text-white btn-lg "
+                          data-bs-dismiss="modal">Submit</button>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-center gap-2 mb-4 ">
+    <h2>MEALS</h2>
+    <a routerLink="/addmeal">
+      <i class="ti ti-plus card-title btn btn-outline-secondary btn-sm btn" ></i>
+    </a>
+    
+    <!-- <h3 class="card-title  fw-semibold mb-4 btn btnPrimary text-white changPrimary w-25 h-25">add MEAL</h3> -->
+  
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-6 col-xl-3" *ngFor="let meal of meals" >
+      
+      <div class="card overflow-hidden rounded-2 shadow">
+        <div class="position-relative">
+          <img [src]=" meal.imageFile" class="card-img-top rounded-0 imgHeight" alt={{meal.title}}>
+          <div class="dropdown">
+            <button type="button" id="dropdownMenuButton" class="btn changPrimary  p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-4"  data-bs-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+              <i class="ti ti-list"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a (click)="deleteMeal(meal._id)" class="dropdown-item btn">Delete</a>
+                <a (click)="loadMeal(meal)" class="dropdown-item btn" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">edit</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body pt-3 p-4">
+          <h6 class="fw-semibold fs-5">{{meal.title}}</h6>
+          <div class="d-flex align-items-center px-2 gap-4 justify-content-between">
+            <h6 class="fw-semibold fs-6 mb-0">${{meal.price}}</h6>
+            <div class="d-flex justify-content-end">
+              <span class="badge rounded-3 fw-semibold"  [ngClass]="getBadgeClass(meal.category)">{{meal.category}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<app-mealForm [data]="meal" (mealUpdated)="getAllMeals()"></app-mealForm>

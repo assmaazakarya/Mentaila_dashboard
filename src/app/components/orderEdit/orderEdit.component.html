@@ -1,0 +1,73 @@
+<div class="modal fade" id="largeModal" tabindex="-1" aria-labelledby="largeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="largeModalLabel">Edit Order</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h5 class="card-title mb-4">Edit Order</h5>
+                  <form [formGroup]="editorderForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-3">
+                      <label for="orderId" class="form-label">Order ID</label>
+                      <input type="text" class="form-control" id="orderId" placeholder="Order ID" readonly formControlName="orderId">
+                    </div>
+                    <div class="mb-3">
+                      <label for="userName" class="form-label">User Name</label>
+                      <input type="text" class="form-control" id="userName" placeholder="User Name" formControlName="userName">
+                    </div>
+                    <div class="mb-3">
+                      <label for="country" class="form-label">Country</label>
+                      <input type="text" class="form-control" id="country" placeholder="Country" formControlName="country">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="phone" class="form-label">Phone</label>
+                      <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
+                    </div>
+                    <div class="mb-3">
+                      <label for="subtotal" class="form-label">Subtotal</label>
+                      <input type="text" class="form-control" id="subtotal" placeholder="Subtotal" formControlName="subtotal">
+                    </div>
+                    <div class="mb-3">
+                      <label for="total" class="form-label">Total</label>
+                      <input type="text" class="form-control" id="total" placeholder="Total" formControlName="total">
+                    </div>
+                    <div class="mb-3">
+                      <label for="deliveryStatus" class="form-label">Delivery Status</label>
+                      <select class="form-select" id="deliveryStatus" formControlName="delivery_status">
+                        <option selected disabled>Select Delivery Status</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="in_transit">In Transit</option>
+                        <option value="pending">Pending</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label for="paymentStatus" class="form-label">Payment Status</label>
+                      <select class="form-select" id="paymentStatus" formControlName="payment_status">
+                        <option selected disabled>Select Payment Status</option>
+                        <option value="paid">Paid</option>
+                        <option value="unpaid">Unpaid</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Update Order</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

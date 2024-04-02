@@ -1,0 +1,63 @@
+<div class="container-fluid ">
+  <div class="row d-flex JustCenter">
+    <h2 class="text-center">Coaches</h2>
+    <div class="col-lg-10 d-flex align-items-stretch w-100">
+      <div class="card w-100 shadow">
+        <div class="card-body p-4">
+          <a [routerLink]="['/addcoach']">
+            <h3 class="card-title fw-semibold mb-4 btn btnPrimary text-white changPrimary">add coach</h3>
+        </a>
+        
+          <div class="table-responsive">
+            <table class="table align-middle mb-0 bg-white">
+              <thead class="bg-light">
+                <tr>
+                  <th>Name / email</th>
+                  <th>Password</th>
+                  <th>role</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let coach of coaches">
+                  <td>
+                    <div class="d-flex align-items-center">
+                      <!-- <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
+                        class="rounded-circle" /> -->
+                      <div class="ms-3">
+                        <p class="fw-bold mb-1">{{coach.name}}</p>
+                        <p class="text-muted mb-0">{{coach.email}}</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="text-muted mb-0">{{coach.password}}</p>
+                  </td>
+                  <td>
+                    <span [ngSwitch]="coach.isAdmin" class="badge rounded-bill fw-semibold" [ngClass]="getBadgeClass(coach.isAdmin)" >
+                      <ng-container *ngSwitchCase="true">Admin</ng-container>
+                      <ng-container *ngSwitchCase="false">User</ng-container>
+                    </span>
+                  </td>
+                  <td> <button (click)="delete(coach._id)" type="button"
+                      class="btn pinkText btn-sm bg-body-secondary btn-light-indigo rounded-bill">
+                      Delete
+                    </button></td>
+                  <!-- <td>
+                    <button (click)="loadCoach(coach)" type="button"
+                      class="btn text-indigo btn-sm bg-body-secondary btn-light-indigo rounded-bill" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                      Edit
+                    </button>
+                  </td> -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-AddCoach [data]="coach" (userUpdate)="getAll() ></app-AddCoach> -->
+

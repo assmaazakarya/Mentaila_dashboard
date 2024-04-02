@@ -1,0 +1,24 @@
+{
+    "/meals/get-all": {
+      "target": "http://localhost:3000",
+      "secure": false
+    },
+    "/meals/add-item":{
+      "target": "http://localhost:3000",
+      "secure": false
+    },
+    "/meals/delete-item":{
+      "target": "http://localhost:3000",
+      "secure": false
+    },
+
+    "/meals/edit-item":{
+      "target": "http://localhost:3000",
+      "secure": false
+    },
+    "/meals/getItemById":{
+      "target": "http://localhost:3000",
+      "secure": false
+    }
+    
+  }

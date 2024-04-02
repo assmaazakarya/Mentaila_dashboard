@@ -1,0 +1,20 @@
+/* Style valid input fields */
+.ng-valid {
+    border-color: skyblue !important; /* Change this to your desired color */
+  }
+
+  .invalid-feedback {
+    color: #fd96e6 !important;
+  }
+  
+  /* Style valid feedback message */
+  .valid-feedback {
+    color: skyblue !important
+    ;
+  }
+
+  /* Style invalid input fields that are dirty and touched */
+.ng-invalid.ng-dirty.ng-touched {
+    border-color: #fd96e6 !important;
+  }
+  /* Style invalid input fields */

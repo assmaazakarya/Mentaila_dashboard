@@ -1,0 +1,66 @@
+<!-- <form class="vh-100" [formGroup]="coachForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-9">
+ 
+        <h1 class="text-indigo text-opacity-75 text-center fs-3 mb-4">ADD coach</h1>
+
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body">
+
+            <div class="mb-3">
+              <label for="exampleInputName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="exampleInputName" formControlName="name" [ngClass]="{'is-invalid': coachForm.get('name')?.invalid && (coachForm.get('name')?.touched || coachForm.get('name')?.dirty), 'is-valid': coachForm.get('name')?.valid && (coachForm.get('name')?.touched || coachForm.get('name')?.dirty)}">
+              <div class="invalid-feedback" *ngIf="coachForm.get('name')?.invalid && (coachForm.get('name')?.touched || coachForm.get('name')?.dirty)">
+                Full Name is required and must be between 3 and 30 characters.
+              </div>
+              <div class="valid-feedback" *ngIf="coachForm.get('name')?.valid && (coachForm.get('name')?.touched || coachForm.get('name')?.dirty)">
+                Full Name is valid.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email" [ngClass]="{'is-invalid': coachForm.get('email')?.invalid && (coachForm.get('email')?.touched || coachForm.get('email')?.dirty), 'is-valid': coachForm.get('email')?.valid && (coachForm.get('email')?.touched || coachForm.get('email')?.dirty)}">
+              <div class="invalid-feedback" *ngIf="coachForm.get('email')?.invalid && (coachForm.get('email')?.touched || coachForm.get('email')?.dirty)">
+                Email is required and must be a valid email address.
+              </div>
+              <div class="valid-feedback" *ngIf="coachForm.get('email')?.valid && (coachForm.get('email')?.touched || coachForm.get('email')?.dirty)">
+                Email is valid.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" [ngClass]="{'is-invalid': coachForm.get('password')?.invalid && (coachForm.get('password')?.touched || coachForm.get('password')?.dirty), 'is-valid': coachForm.get('password')?.valid && (coachForm.get('password')?.touched || coachForm.get('password')?.dirty)}">
+              <div class="invalid-feedback" *ngIf="coachForm.get('password')?.invalid && (coachForm.get('password')?.touched || coachForm.get('password')?.dirty)">
+                Password is required and must be at least 6 characters long.
+              </div>
+              <div class="valid-feedback" *ngIf="coachForm.get('password')?.valid && (coachForm.get('password')?.touched || coachForm.get('password')?.dirty)">
+                Password is valid.
+              </div>
+            </div>
+
+            <div>
+              <label>Select coach Role:</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="coachRole" id="coachRadio" value="false" (change)="onChangeCoachRole(false)" checked>
+                <label class="form-check-label" for="coachRadio">coach</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="coachRole" id="adminRadio" value="true" (change)="onChangeCoachRole(true)" >
+                <label class="form-check-label" for="adminRadio">Admin</label>
+              </div>
+            </div>
+
+            <div class="px-5 py-4">
+              <button type="submit" class="btn changPrimary btnPrimary text-white btn-lg">Send application</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form> -->
